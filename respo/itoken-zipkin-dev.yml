@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: itoken-zipkin
+  boot:  # spring boot admin 健康检测地址配置
+    admin:
+      client:
+        url: http://localhost:8084
+
+server:
+  port: 9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management: # 2.8版本之前没有这个配置 2.10以后要添加这个配置
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: itoken-config
+  cloud: #云端配置依赖
+    config:
+      label: master  #分支
+      server:
+        git:
+          uri: https://github.com/itokenProjects/itoken-config.git #github地址
+          search-paths: respo  #路径
+          username: wzk-ai
+          password: wzk199458
+  zipkin: #zipkin 服务追踪依赖
+    base-url: http://localhost:9411
+  boot:  # spring boot admin 健康检测地址配置
+    admin:
+      client:
+        url: http://localhost:8084
+
+server:
+  port: 8888
+
+eureka: #注册到eureka
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
