@@ -11,11 +11,22 @@ spring:
 server:
   port: 8761
 
+management:
+  endpoint: #健康检测配置 每个项目中都应该配置一个健康检查
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: * #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
+
 eureka:
   instance:
     hostname: localhost
   client: #服务端需要添加
+    #表示是否将自己注册到 Eureka 因为要构建集群环境，需要将自己注册到集群，所以应该开启
     registerWithEureka: false #不注册自己
+    #表示是否从Eureka 获取注册信息，如果是单一节点，不需要同步其他Eureka节点，则可以设置为false，但是为集群的话，应该设置为true
     fetchRegistry: false #不拉取服务列表
     serviceUrl:  #地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

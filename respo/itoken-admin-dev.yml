@@ -7,14 +7,14 @@ spring:
 server:
   port: 8084
 
-management: #健康检查配置 每个项目中都应该配置一个健康检查
-  endpoint:
+management:
+  endpoint: #健康检测配置 每个项目中都应该配置一个健康检查
     health:
       show-details: always
   endpoints:
     web:
       exposure:
-        include: health , info #health,info  健康检查参数
+        include: health , info #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
 
 eureka:
   client:

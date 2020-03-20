@@ -6,7 +6,7 @@ spring:
       label: master  #分支
       server:
         git:
-          uri: https://github.com/itokenProjects/itoken-config.git #github地址
+          uri: https://github.com/itokenProjects/itoken-config.git  #github地址
           search-paths: respo  #路径
           username: wzk-ai
           password: wzk199458
@@ -20,7 +20,16 @@ spring:
 server:
   port: 8888
 
-eureka: #注册到eureka
+management:
+  endpoint: #健康检测配置 每个项目中都应该配置一个健康检查
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health , info #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
+
+eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/

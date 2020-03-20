@@ -33,26 +33,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Spring Boot End -->
-
-        <!-- Spring Cloud Begin  分布式配置中心 配置依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-
-        <!--eureka 依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-        <!-- Spring Cloud End -->
-
-        <!--zipkin 服务追踪依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
 
         <!--spring boot admin 健康检查客户端依赖-->
         <dependency>
@@ -64,6 +44,32 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
         <!--spring boot admin 健康检查客户端依赖  end ===== -->
+        <!-- Spring Boot End -->
+
+
+        <!-- Spring Cloud Begin -->
+        <!--config 分布式配置中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
+        <!--eureka 服务注册与发现-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+        <!--zipkin 服务追踪依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <!-- Spring Cloud End -->
+
+
+
+
     </dependencies>
 
     <build>
