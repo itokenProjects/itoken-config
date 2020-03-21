@@ -18,7 +18,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: * #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
+        include: health , info  #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
 
 eureka:
   instance:
