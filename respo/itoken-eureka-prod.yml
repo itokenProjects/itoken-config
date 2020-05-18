@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: 106.54.218.126
+  client: #服务端需要添加
+    #表示是否将自己注册到 Eureka 因为要构建集群环境，需要将自己注册到集群，所以应该开启
+    registerWithEureka: false #不注册自己
+    #表示是否从Eureka 获取注册信息，如果是单一节点，不需要同步其他Eureka节点，则可以设置为false，但是为集群的话，应该设置为true
+    fetchRegistry: false #不拉取服务列表
+    serviceUrl:  #地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+

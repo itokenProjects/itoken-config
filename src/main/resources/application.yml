@@ -32,4 +32,4 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://106.54.218.126:8761/eureka/
