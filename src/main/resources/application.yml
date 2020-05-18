@@ -29,6 +29,7 @@ management:
       exposure:
         include: health , info #health(信息监控),info(健康健康)  健康检查参数 *代表所有的
 
+
 eureka:
   client:
     serviceUrl:
